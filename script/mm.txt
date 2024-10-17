@@ -1,0 +1,48 @@
+
+<div class="card p-4 col-4 col-md-2 col-sm-1" style="width: 25rem;" id=${r.id}c>
+        <p> ${r.category} </p>
+        <p>Brand : <span class="text-info"> ${r.brand} </span></p>
+        <p class="d-block my-2"><span class="text-info"> ${r.quantity} avaliable</span></p>
+        <div class=" img-resizer d-flex justify-content-center align-items-center">
+        <img src=${r.image} class="card-img-top img-size" alt=${r.description} data-bs-toggle="modal" data-bs-target=#staticBackdrop${r.id}>
+        </div>
+        <div class="card-body d-flex flex-column justify-content-between">
+            <h5 class="card-title">${r.name}</h5>
+            <p class="card-text">${r.description}</p>
+<div class="d-flex flex-column align-items-center justify-content-between">
+<button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target=#staticBackdrop${r.id}>
+ <i class="fa-regular fa-newspaper mx-2"></i> Features
+</button>
+<!-- Modal -->
+<div class="modal fade" id=staticBackdrop${r.id} data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">${r.name}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <img src=${r.image} class="card-img-top" alt=${r.description}>
+             <ul class='d-flex flex-column' id=${r.id}>
+             <h6>features:</h6>
+                ${r.features.map(feature => {
+                return `<li>${feature}</li>`
+                }).join("")}
+            </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+            <p class="text-success d-block my-3">price: ${r.price}<i class="fa-solid fa-dollar-sign mx-2"></i></p>
+            <div class="d-flex align-items-center justify-content-between w-100">
+<button class="btn px-3 fs-4 py-1 btn-success addCart" id=${r.id}t onclick="addToCart(${r.id})">+<i class="fa-solid fa-cart-plus mx-2"></i></button> 
+              
+                <button class="btn px-3 fs-4 py-1 btn-secondary addCart" >-<i class="fa-solid fa-trash-can mx-2"></i></button>
+            </div>
+            <button class="w-100 d-block my-2 btn btn-primary"><i class="fa-solid fa-cart-arrow-down mx-2"></i>go to cart </button></div>
+        </div>
+    </div>
