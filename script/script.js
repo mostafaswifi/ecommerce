@@ -28,7 +28,7 @@ let notFound = `<div class="card text-center">
    <span class="text-white fs-3 fw-bold"> Not found </span><i class="fa-solid fa-triangle-exclamation text-white fs-3 fw-bold"></i>
   </div>
   <div class="card-body">
-  <img src="../assets/helpersImgs/6988279.jpg" class="" alt="not found" width="250px" height="250px">
+  <img src="./assets/helpersImgs/6988279.jpg" class="" alt="not found" width="250px" height="250px">
     <h5 class="card-title">No product found!!</h5>
     <p class="card-text">Please try using some other keyword.</p>
     <button class="btn btn-secondary" onClick="window.location.reload()" >Go home</button>
